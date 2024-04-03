@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{title}}</h1>
+      <hr>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>CONTACT</th>
+          <th>AGE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let customerList of Customer">
+          <td>{{customerList.id}}</td>
+          <td>{{customerList.name}}</td>
+          <td>{{customerList.email}}</td>
+          <td>{{customerList.contact}}</td>
+          <td>{{customerList.age}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>ADD CUSTOMER</h3>
+      <hr>
+      <form (ngSubmit)="addCustomer()">
+        <label>ID :</label>
+        <input type="number" class="form-control" [(ngModel)]="newCustomer.id" name="id">
+        <label>NAME :</label>
+        <input type="text" class="form-control" [(ngModel)]="newCustomer.name" name="name">
+        <label>EMAIL :</label>
+        <input type="text" class="form-control" [(ngModel)]="newCustomer.email" name="email">
+        <label>CONTACT :</label>
+        <input type="text" class="form-control" [(ngModel)]="newCustomer.contact" name="contact">
+        <label>AGE :</label>
+        <input type="number" class="form-control" [(ngModel)]="newCustomer.age" name="age">
+        <button class="btn btn-outline-primary mt-2 mb-3">Add Customer</button>
+      </form>
+    </div>
+  </div>
+</div>
